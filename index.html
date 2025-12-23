@@ -2,59 +2,88 @@
 <html lang="en">
 
 <head>
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Title -->
     <title>Weather Forecast API</title>
+
+    <!-- Script -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
+
+    <!-- HEADER -->
     <header>
+
+        <!-- App title -->
         <section class="title">
             <h1>Weather Forecast Site</h1>
         </section>
 
+        <!-- Location search -->
         <section class="location">
             <input type="text">
             <button type="submit" onclick="searchBtn()" id="find">Find</button>
+
+            <!-- Loader shown during API calls -->
             <div id="loader" class="hidden"></div>
-             </section>
+        </section>
+
     </header>
+
+    <!-- MAIN CONTENT -->
     <main>
+
+        <!-- Current weather -->
         <section class="today">
             <h3 id="todayTemp">0c</h3>
             <span id="todayTime">time</span>
             <span id="todayDate">date</span>
-            <span id="todayDay" >Day</span>
+            <span id="todayDay">Day</span>
         </section>
+
+        <!-- Future hourly weather -->
         <section class="futureHour">
+
             <div class="futureweatherbox">
                 <h3 id="hour1">0c</h3>
                 <span id="hour1time">weather</span>
             </div>
+
             <div class="futureweatherbox">
                 <h3 id="hour2">0c</h3>
-                <span id="hour2time" >weather</span>
+                <span id="hour2time">weather</span>
             </div>
+
             <div class="futureweatherbox">
                 <h3 id="hour3">0c</h3>
                 <span id="hour3Time">weather</span>
             </div>
+
             <div class="futureweatherbox">
                 <h3 id="hour4">0c</h3>
                 <span id="hour4Time">weather</span>
             </div>
+
             <div class="futureweatherbox">
                 <h3 id="hour5">0c</h3>
                 <span id="hour5Time">weather</span>
             </div>
+
             <div class="futureweatherbox">
                 <h3 id="hour6">0c</h3>
                 <span id="hour6Time">weather</span>
             </div>
-        </section>
-    </main>
-</body>
 
+        </section>
+
+    </main>
+
+</body>
 </html>

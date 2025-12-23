@@ -1,24 +1,60 @@
-# JavaScipt Learning December 2025
- This contains my web dev project and progress for the month of december
+# JavaScript Learning – December 2025
 
+This repository contains my JavaScript learning progress and mini projects for December 2025.
 
-This is my first proper js project and i wanted to test my knowledge by building an API based weather site.
-Problem #1 i faced was that the API i decided to use (open-meteo) for getting weather needed Latitude and Longitude of selected location in its fetch url. (Almost all weather forecast API needed it).
+The primary project in this repo is an API-based weather forecast website, built to test and reinforce my understanding of JavaScript fundamentals, asynchronous code, and working with external APIs.
 
-So i found another API (geoapify) that takes in user location and returns many information including Latitude and Longitude that we can then use the our main API fetch.
+---
 
-First i started by creating basic Ui layout to get idea of what info i want to display and how it should appear on desktop vs mobile. 
+## Project: Weather Forecast Website
 
-![alt text](<Screenshot from 2025-12-21 12-45-10.png>)
+This is my first complete JavaScript project using real-world APIs.
 
-Day 2 
+### Problem Statement
 
-I fixed the site to show date, day and time. I also made the changes to show next 6 hour temperature with time. I learned about Date object, and using "?" as a concise if/else statement. 
+The weather API I chose initially (**Open-Meteo**) requires latitude and longitude coordinates rather than a city name. Since most weather APIs follow this approach, I needed a way to convert user-entered locations into coordinates.
 
-I am pretty confident about using API and with basic javascript so far. Though i just learned that showing API key directly within website code isnt the best practice as that can be abused, so i will have to learn how to go about that.
+### Solution
 
-Day 3
-Changed some id text part from day to hour to correctly label what they are displaying.
-Changed styling of the page to look more modern.
-Added Loader animation and button disabling.
-Found bug with timezone (time not changing) when searching for temperature outside india. Probably due to new Date Object-- i will fix it tommorrow 
+To solve this, I integrated a second API (**Geoapify**) that accepts a location name and returns detailed geographic data, including latitude, longitude, and timezone.  
+These values are then used to fetch weather data from Open-Meteo.
+
+---
+
+## Development Progress
+
+### Day 1
+- Designed a basic UI layout to decide what information to display.
+- Planned how the layout should behave on desktop vs mobile.
+- Implemented initial API fetching logic.
+
+![UI Screenshot](Screenshot from 2025-12-21 12-45-10.png)
+
+### Day 2
+- Added date, day, and time display.
+- Implemented temperature forecast for the next 6 hours.
+- Learned practical usage of the `Date` object.
+- Used the ternary (`? :`) operator for concise conditional logic.
+
+### Day 3
+- Renamed certain IDs (day → hour) for clarity and correctness.
+- Improved styling for a more modern appearance.
+- Added a loader animation and disabled the search button during API calls.
+- Discovered a timezone bug when searching locations outside India, likely due to how `Date` is handled. This is planned to be fixed next.
+- Used AI (ChatGPT) to reformat code, add comments, and improve readability.
+- Re-wrote readme file to be more precise and clear.
+
+---
+
+## Learnings & Notes
+
+- Gained confidence working with APIs and async JavaScript.
+- Learned that exposing API keys directly in client-side code is insecure and should be avoided.
+- Identified timezone handling as an important edge case when working with global data.
+
+---
+
+## Next Improvements
+- Fix timezone handling for non-local searches.
+- Improve error handling (invalid location, API failure).
+- Explore secure ways to handle API keys.
