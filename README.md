@@ -17,3 +17,8 @@ I fixed the site to show date, day and time. I also made the changes to show nex
 
 I am pretty confident about using API and with basic javascript so far. Though i just learned that showing API key directly within website code isnt the best practice as that can be abused, so i will have to learn how to go about that.
 
+Day 3
+Changed some id text part from day to hour to correctly label what they are displaying.
+Changed styling of the page to look more modern.
+Added Loader animation and button disabling.
+Found bug with timezone (time not changing) when searching for temperature outside india. Probably due to new Date Object-- i will fix it tommorrow 

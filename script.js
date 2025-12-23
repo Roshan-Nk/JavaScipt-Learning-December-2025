@@ -13,7 +13,7 @@ const currentYear = currentDate.getFullYear();
 const currentHour = currentDate.getHours();
 const futureTime =[];
 let hoursFormated;
-
+const loader = document.querySelector("#loader");
 
 
 function searchBtn(){
@@ -32,7 +32,8 @@ function searchBtn(){
 
 async function getLongAndLat(){
     try{
-        
+        document.getElementById("find").disabled = true;
+        loader.classList.remove("hidden");
         console.log("Searching...")
         const apikey = "4926c30388d04b78974d2558e158896b",
         isSearching=true;
@@ -90,21 +91,21 @@ async function getData(){
         })
 
 
-        document.getElementById("day1").innerText=data.hourly.temperature_2m[futureTime[0]];
-        document.getElementById("day2").innerText=data.hourly.temperature_2m[futureTime[1]];
-        document.getElementById("day3").innerText=data.hourly.temperature_2m[futureTime[2]];
-        document.getElementById("day4").innerText=data.hourly.temperature_2m[futureTime[3]];
-        document.getElementById("day5").innerText=data.hourly.temperature_2m[futureTime[4]];
-        document.getElementById("day6").innerText=data.hourly.temperature_2m[futureTime[5]];
+        document.getElementById("hour1").innerText=data.hourly.temperature_2m[futureTime[0]];
+        document.getElementById("hour2").innerText=data.hourly.temperature_2m[futureTime[1]];
+        document.getElementById("hour3").innerText=data.hourly.temperature_2m[futureTime[2]];
+        document.getElementById("hour4").innerText=data.hourly.temperature_2m[futureTime[3]];
+        document.getElementById("hour5").innerText=data.hourly.temperature_2m[futureTime[4]];
+        document.getElementById("hour6").innerText=data.hourly.temperature_2m[futureTime[5]];
         document.getElementById("todayDate").innerText=`${currentDateA}/${currentMonth}/${currentYear}`;
         document.getElementById("todayDay").innerText=Weekday[currentDay];
         document.getElementById("todayTime").innerText=hoursFormated[0];
-        document.getElementById("day1Time").innerText=hoursFormated[1];
-        document.getElementById("day2Time").innerText=hoursFormated[2];
-        document.getElementById("day3Time").innerText=hoursFormated[3];
-        document.getElementById("day4Time").innerText=hoursFormated[4];
-        document.getElementById("day5Time").innerText=hoursFormated[5];
-        document.getElementById("day6Time").innerText=hoursFormated[6];
+        document.getElementById("hour1Time").innerText=hoursFormated[1];
+        document.getElementById("hour2Time").innerText=hoursFormated[2];
+        document.getElementById("hour3Time").innerText=hoursFormated[3];
+        document.getElementById("hour4Time").innerText=hoursFormated[4];
+        document.getElementById("hour5Time").innerText=hoursFormated[5];
+        document.getElementById("hour6Time").innerText=hoursFormated[6];
         
     }
     catch(err){
@@ -114,6 +115,8 @@ async function getData(){
         
         console.log("Search complete");
         isSearching=false;
+        loader.classList.add("hidden");
+         document.getElementById("find").disabled = false;
 
     }
 };
